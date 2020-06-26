@@ -36,10 +36,4 @@ public class CurrencyIncrease {
 
         return sb.toString();
     }
-
-    public static void main(String[] args) {
-        CurrencyIncrease test = new CurrencyIncrease();
-        String input = "X borrowed $40 percentage from Y $10";
-        System.out.println(test.currencyIncrease(input, 20));
-    }
 }
