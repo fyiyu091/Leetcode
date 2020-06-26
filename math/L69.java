@@ -1,4 +1,4 @@
-package binaryreduction;
+package math;
 
 public class L69 {
     public int mySqrt(int x) {

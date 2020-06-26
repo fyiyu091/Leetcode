@@ -1,4 +1,4 @@
-package array;
+package math;
 
 /* Count the number of prime numbers that are less than a non-negative number */
 

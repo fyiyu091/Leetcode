@@ -1,4 +1,4 @@
-package linkedlist;
+package math;
 
 import tree.ListNode;
 
