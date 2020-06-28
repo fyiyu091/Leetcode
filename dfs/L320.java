@@ -14,10 +14,12 @@ public class L320 {
 
     private void dfs(List<String> res, StringBuilder sb, String word, int index, int count) {
         if (index == word.length()) {
+            int originLen = sb.length();
             if (count != 0) {
                 sb.append(count);
             }
             res.add(sb.toString());
+            sb.setLength(originLen);
             return;
         }
 

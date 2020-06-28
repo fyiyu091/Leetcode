@@ -35,6 +35,7 @@ public class L301 {
             path.setLength(path.length() - 1);
 
             // purpose of this check is to dedup
+            // before going into the next level, make sure skip the adjacent same parentheses
             while (index < s.length() - 1 && s.charAt(index) == s.charAt(index + 1)) {
                 index++;
                 removeL--;
