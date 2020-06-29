@@ -30,7 +30,7 @@ public class L10 {
                 return false;
             }
         }
-        else {
+        else { // idxP + 1 == '*' case
             int i = idxS - 1;
             while (i < s.length() && (i < idxS || isMatch(s, i, p, idxP))) {
                 if (dfs(s, i + 1, p, idxP + 2, mem)) {
