@@ -20,9 +20,9 @@ public class L139 {
         int len = s.length();
         boolean[] dp = new boolean[len + 1];
         dp[0] = true;
-        for (int i = 1; i < dp.length; i++) {
-            for (int j = 0; j < i; j++) {
-                if (dict.contains(s.substring(j, i)) && dp[j]) {
+        for (int i = 1; i < dp.length; i++) { // i is the index in dp
+            for (int j = 0; j < i; j++) { // j is the index in word
+                if (dict.contains(s.substring(j, i)) && dp[j]) { // [j, i), because dp[j] meaning word[j - 1]
                     dp[i] = true;
                 }
             }

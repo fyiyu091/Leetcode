@@ -1,6 +1,8 @@
 package experimental;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Student {
     class Teacher {
@@ -32,6 +34,11 @@ public class Student {
         int[] a = {1, 2, 3};
         int[] b = {1, 2, 3};
         System.err.println(Arrays.hashCode(a) == Arrays.hashCode(b));
+        System.err.println(a.hashCode() == b.hashCode());
+        Set<int[]> set = new HashSet<>();
+        set.add(a);
+        set.add(b);
+        System.out.println(set.size());
 //        List<String> res = new ArrayList<>();
 //        for (String str : res) {
 //            System.err.println(str);

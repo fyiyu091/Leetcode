@@ -1,6 +1,9 @@
 package pruning;
 
-/* Given an integer matrix, find the length of the longest increasing path */
+/* Given an integer matrix, find the length of the longest increasing path
+*  Time complexity is O(m*n), because if one iteration touches all the element,
+*  It will stores the value for each element, so any subsequent touch will be O(1)
+* */
 
 public class L329 {
     private int max = 0;

@@ -1,6 +1,10 @@
 package pruning;
 
-/* Can I win */
+/* Can I win
+*  Maximum available number is smaller than 20
+*  We could use a int to representing each number's chosen situation
+*  desiredTotal can be calculated from the maximum available number
+* */
 
 import java.util.HashMap;
 import java.util.Map;
