@@ -1,53 +1,33 @@
 package dp;
 
-/* Palindrome partitioning, return minimum cuts needed */
+/* Palindrome partitioning, return minimum cuts needed
+*/
 
 public class L132 {
     public int minCut(String s) {
+        // corner case
         if (s == null || s.length() == 0) {
-            return -1;
-        }
-        if (s.length() == 1) {
             return 0;
         }
 
-        // Here, dp could just be size of s.length() as well
-        int[] dp = new int[s.length() + 1];
-        // [idx, s.length() - 1] minimum cut
-        dp[s.length()] = 0;
+        int len = s.length();
+        boolean[][] isPalin = new boolean[len][len];
+        int[] dp = new int[len + 1];
+        dp[len] = 0;
 
-        for (int i = s.length() - 1; i >= 0; i--) {
-            if (isPalindrome(s.substring(i))) {
-                dp[i] = 0;
-            }
-            else {
-                dp[i] = s.length() - i - 1;
-                for (int j = i + 1; j <= s.length(); j++) {
-                    if (isPalindrome(s.substring(i, j))) {
-                        dp[i] = Math.min(dp[i], 1 + dp[j]);
-                    }
+        // i, j are all str_idx
+        for (int i = len - 1; i >= 0; i--) { // i is str_idx
+            dp[i] = len - i - 1; // "bb" case, when i = 0, dp[i] = 2 - 0 - 1 = 1
+            for (int j = i; j < len; j++) {
+                isPalin[i][j] = (i == j || (i + 1 == j || isPalin[i + 1][j - 1]) && s.charAt(i) == s.charAt(j));
+                if (j == len - 1 && isPalin[i][j]) { // we need this for "bb" case and when i == 0
+                    dp[i] = 0;
+                }
+                if (isPalin[i][j]) {
+                    dp[i] = Math.min(dp[i], 1 + dp[j + 1]);
                 }
             }
         }
         return dp[0];
     }
-
-    private boolean isPalindrome(String str) {
-        if (str == null || str.length() == 0) {
-            return false;
-        }
-        if (str.length() == 1) {
-            return true;
-        }
-
-        int left = 0;
-        int right = str.length() - 1;
-        while (left < right) {
-            if (str.charAt(left++) != str.charAt(right--)) {
-                return false;
-            }
-        }
-        return true;
-    }
-
 }
