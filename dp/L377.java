@@ -1,6 +1,10 @@
 package dp;
 
-/* Combination Sum IV */
+/* Combination Sum IV
+*  Find the number of possible combinations that add up to a positive integer target
+*  Search problem, how to branch? target minus any num from nums
+*  Status dp[i] is number of possible combinations of i from nums
+* */
 
 public class L377 {
     public int combinationSum4(int[] nums, int target) {

@@ -1,5 +1,14 @@
 package dp;
 
+/*
+   Two player, pick one num from either end
+   Predict whether the starting player wil win
+   dp[i][j] means from board i to j
+   Two option, pick i or pick j
+   If pick i, next player will either pick i + 1 or j
+   If pick j, next player will either pick i or j - 1
+   Then my current player has to chose the min of those two options
+ */
 public class L486 {
     public boolean predictTheWinner(int[] nums) {
         if (nums == null || nums.length == 0) {

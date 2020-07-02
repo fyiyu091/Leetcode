@@ -12,7 +12,7 @@ public class L322 {
 
         // dp index means coin change to this idx with the minimum needed coins
         int[] dp = new int[amount + 1];
-        Arrays.fill(dp, amount + 1);
+        Arrays.fill(dp, amount + 1); // amount + 1 is not a valid answer
         // get 0 amount need 0 coins
         dp[0] = 0;
 
@@ -21,7 +21,7 @@ public class L322 {
                 if (i < coin) {
                     continue;
                 }
-                dp[i] = Math.min(dp[i], dp[i - coin] + 1);
+                dp[i] = Math.min(dp[i], dp[i - coin] + 1); // amount + 1 + 1 will be be updating the original dp[i] value amount + 1
             }
         }
 

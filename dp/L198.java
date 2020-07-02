@@ -1,6 +1,12 @@
 package dp;
 
-/* House Robber */
+/* House Robber
+*  How to branch?
+*  Rob curr or not
+*  1 2 3 1
+*  4 3 3 1
+*
+* */
 
 public class L198 {
     public int rob(int[] nums) {
@@ -14,22 +20,15 @@ public class L198 {
             return Math.max(nums[0], nums[1]);
         }
 
-        int max = Math.max(nums[0], nums[1]);
-        int[] dp = new int[nums.length];
-        dp[0] = nums[0];
-        dp[1] = nums[1];
-        for (int i = 2; i < nums.length; i++) {
-            for (int j = i - 2; j >= 0; j--) {
-                max = Math.max(max, dp[j]);
-            }
-            if (nums[i] + max > dp[i - 1]) {
-                dp[i] = nums[i] + max;
-            }
-            else {
-                dp[i] = dp[i - 1];
-            }
+        int len = nums.length;
+        int[] dp = new int[len];
+        dp[len - 1] = nums[len - 1];
+        dp[len - 2] = Math.max(nums[len - 1], nums[len - 2]);
+
+        for (int i = len - 3; i >= 0; i--) {
+            dp[i] = Math.max(nums[i] + dp[i + 2], dp[i + 1]);
         }
 
-        return dp[nums.length - 1];
+        return dp[0];
     }
 }

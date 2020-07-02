@@ -16,6 +16,11 @@ public class L221 {
             max = Math.max(max, dp[j]);
         }
 
+        /*
+           tmp representing [i - 1][j - 1]
+           dp[j - 1] is representing [i][j - 1]
+           dp[j] is representing [i - 1][j]
+         */
         for (int i = 1; i < row; i++) {
             int tmp = dp[0];
             dp[0] = matrix[i][0] - '0';
