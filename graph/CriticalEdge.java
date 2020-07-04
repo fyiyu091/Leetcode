@@ -5,17 +5,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
-/*
-   The key is if the return label is equal or larger than the current label
-   Prev to curr is a critial edge
-
-   0 - 1 - 2 - 3 - 4
-           |       |
-           - - - - -
-
-   This case [0,1] and [1,2] are critical connections
- */
-public class L1192 {
+public class CriticalEdge {
     private int label = 1;
     public List<List<Integer>> criticalConnections(int n, List<List<Integer>> connections) {
         List<List<Integer>> res = new ArrayList<>();
@@ -29,27 +19,23 @@ public class L1192 {
         return res;
     }
 
-    private int dfs(List<Integer>[] graph, int prev, int curr, int[] labels, List<List<Integer>> res) {
+    private void dfs(List<Integer>[] graph, int prev, int curr, int[] labels, List<List<Integer>> res) {
         if (labels[curr] != 0) {
-            return labels[curr];
+            return;
         }
 
-        int retLabel = Integer.MAX_VALUE;
         labels[curr] = label++;
+        int firstTimeLabel = labels[curr];
         for (int nei : graph[curr]) {
             if (nei == prev) {
                 continue;
             }
-            retLabel = Math.min(retLabel, dfs(graph, curr, nei, labels, res));
-        }
-        // Before update, need to check the return value
-        if (retLabel >= labels[curr]) {
-            if (prev != -1) {
-                res.add(Arrays.asList(prev, curr));
+            dfs(graph, curr, nei, labels, res);
+            labels[curr] = Math.min(labels[curr], labels[nei]);
+            if (labels[nei] > firstTimeLabel) {
+                res.add(Arrays.asList(curr, nei));
             }
         }
-
-        return Math.min(labels[curr], retLabel); // Need to return min including its self
     }
 
     private void buildGraph(List<Integer>[] graph, List<List<Integer>> connections) {

@@ -35,7 +35,7 @@ public class CheckCycleBFS {
             int curr = queue.poll();
             for (int nei : graph[curr]) {
                 inDegrees[nei]--;
-                if (inDegrees[nei] == 0) {
+                if (inDegrees[nei] == 0) { // Offer into queue only when the indegree is 0
                     queue.offer(nei);
                 }
             }

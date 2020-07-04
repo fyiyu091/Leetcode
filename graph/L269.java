@@ -1,17 +1,32 @@
 package graph;
 
-/* Alien dictionary */
+/* Alien dictionary
+*  ab
+*  adc
+*  means b is larger than d and c
+*
+*  ab
+*  abc
+*  this case is not valid
+* */
 
 import java.util.*;
 
 public class L269 { //TODO, have bug, ["ab", "adc"] case failed, can use boolean matrix to representing graph
+    private boolean flag;
     public String alienOrder(String[] words) {
-        if (words == null || words.length <= 1) {
+        if (words == null || words.length == 0) {
             return "";
+        }
+        if (words.length == 1) {
+            return words[0];
         }
 
         Map<Character, Set<Character>> graph = new HashMap<>();
         buildGraph(graph, words);
+        if (flag) {
+            return "";
+        }
         Map<Character, Integer> status = new HashMap<>();
         for (Character ch: graph.keySet()) {
             status.put(ch, 0);
@@ -47,25 +62,66 @@ public class L269 { //TODO, have bug, ["ab", "adc"] case failed, can use boolean
         return false;
     }
 
+    // First of, solve the char not all included problem
+    // All the char of each string will need to be added to the graph
+    // The first different element will define the local order
+    // Also need prev char point to the next char
+    /*
+       wrt
+       wrf
+       er
+       ett
+       rftt
+     */
     private void buildGraph(Map<Character, Set<Character>> graph, String[] words) {
+        boolean isValid = false;
+        String prev = words[0];
         for (int i = 1; i < words.length; i++) {
-            int j = 0;
-            while (j < words[i - 1].length() && j < words[i].length()) {
-                if (!graph.containsKey(words[i - 1].charAt(j))) {
-                    graph.put(words[i - 1].charAt(j), new HashSet<>());
+            String curr = words[i];
+            int prevIdx = 0, currIdx = 0;
+            while (prevIdx < prev.length() && currIdx < curr.length()) {
+                char ch1 = prev.charAt(prevIdx++);
+                char ch2 = curr.charAt(currIdx++);
+                if (!graph.containsKey(ch1)) {
+                    graph.put(ch1, new HashSet<>());
                 }
-                if (words[i - 1].charAt(j) != words[i].charAt(j)) {
-                    if (graph.get(words[i - 1].charAt(j)) == null) {
-                        graph.put(words[i - 1].charAt(j), new HashSet<>());
-                    }
-                    graph.get(words[i - 1].charAt(j)).add(words[i].charAt(j));
-                    if (!graph.containsKey(words[i].charAt(j))) {
-                        graph.put(words[i].charAt(j), new HashSet<>());
-                    }
+                if (!graph.containsKey(ch2)) {
+                    graph.put(ch2, new HashSet<>());
+                }
+                if (ch1 != ch2) {
+                    graph.get(ch1).add(ch2);
+                    isValid = true; // abc, ab case should return ""
                     break;
                 }
-                j++;
             }
+
+            while (prevIdx < prev.length()) { // prev haven't finish
+                if (!isValid) {
+                    flag = true;
+                    return;
+                }
+                if (!graph.containsKey(prev.charAt(prevIdx))) {
+                    graph.put(prev.charAt(prevIdx), new HashSet<>());
+                }
+                prevIdx++;
+            }
+
+            while (currIdx < curr.length()) {
+                if (!graph.containsKey(curr.charAt(currIdx))) {
+                    graph.put(curr.charAt(currIdx), new HashSet<>());
+                }
+                currIdx++;
+            }
+            prev = curr;
         }
+    }
+
+    public static void main(String[] args) {
+        L269 test = new L269();
+//        String[] words = new String[] {"abc", "ab"};
+        String[] words1 = new String[] {"z", "z"};
+        String[] words2 = new String[] {"wnlb"};
+        System.out.println(test.alienOrder(words1));
+        System.out.println(test.alienOrder(words2));
     }
 }

@@ -52,6 +52,7 @@ public class CriticalConnection {
             // If we want to calculate the largest circle in the graph
             // We can representing all the element in the graph by the smallest
             // Calculate Math.max(largest - currMark)
+            // At this point, nei's label is its minimum
             graph[curr].label = Math.min(graph[curr].label, graph[nei].label);
             if (graph[nei].label > currMark) {
                 res.add(Arrays.asList(nei, curr));

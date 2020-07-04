@@ -1,6 +1,13 @@
 package greedy;
 
-/* Jump game */
+/* Jump game
+*  You can always reach the last index
+*  Find the minimum number of jumps that you need
+*  How to branch? You can jump [1,num[i]] to the next position
+*  Search status, current position
+*  Need two variable, one we know that the current max position
+*  The other will be the nextMaxPos, we keep updating that while iterating
+* */
 
 public class L45 {
     public int jump(int[] nums) {
@@ -16,7 +23,7 @@ public class L45 {
                 maxPos = nextMaxPos;
             }
             nextMaxPos = Math.max(nextMaxPos, nums[i] + i);
-        }
+    }
 
         return steps;
     }
