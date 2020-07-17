@@ -29,36 +29,36 @@ public class L407 {
             }
         };
 
-        Queue<Cell> maxHeap = new PriorityQueue<>(comp);
+        Queue<Cell> minHeap = new PriorityQueue<>(comp);
         int row = heightMap.length;
         int col = heightMap[0].length;
         Set<Integer> visited = new HashSet<>();
         for (int i = 0; i < row; i++) {
-            maxHeap.offer(new Cell(i, 0, heightMap[i][0]));
-            maxHeap.offer(new Cell(i, col - 1, heightMap[i][col - 1]));
+            minHeap.offer(new Cell(i, 0, heightMap[i][0]));
+            minHeap.offer(new Cell(i, col - 1, heightMap[i][col - 1]));
             visited.add(i * col);
             visited.add(i * col + col - 1);
         }
         for (int j = 1; j < col - 1; j++) {
-            maxHeap.offer(new Cell(0, j, heightMap[0][j]));
-            maxHeap.offer(new Cell(row - 1, j, heightMap[row - 1][j]));
+            minHeap.offer(new Cell(0, j, heightMap[0][j]));
+            minHeap.offer(new Cell(row - 1, j, heightMap[row - 1][j]));
             visited.add(j);
             visited.add((row - 1) * col + j);
         }
 
         int res = 0;
-        while (!maxHeap.isEmpty()) {
-            Cell curr = maxHeap.poll();
+        while (!minHeap.isEmpty()) {
+            Cell curr = minHeap.poll();
             for (int[] dir : DIRECTIONS) {
                 int ii = curr.i + dir[0];
                 int jj = curr.j + dir[1];
                 if (ii >= 0 && ii < row && jj >= 0 && jj < col && visited.add(ii * col + jj)) {
                     if (heightMap[ii][jj] < curr.val) {
                         res += curr.val - heightMap[ii][jj];
-                        maxHeap.offer(new Cell(ii, jj, curr.val));
+                        minHeap.offer(new Cell(ii, jj, curr.val));
                     }
                     else {
-                        maxHeap.offer(new Cell(ii, jj, heightMap[ii][jj]));
+                        minHeap.offer(new Cell(ii, jj, heightMap[ii][jj]));
                     }
                 }
             }

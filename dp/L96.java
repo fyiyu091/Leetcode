@@ -1,6 +1,11 @@
 package dp;
 
-/* How many unique BST that store values 1 ... n */
+/* How many unique BST that store values 1 ... n
+*  dp[i] means with i numbers how many unique BST
+*  dp[0] is 1 because null is a BST
+*  dp[1] is 1 because 1 node only has one BST
+*
+* */
 
 public class L96 {
     public int numTrees(int n) {

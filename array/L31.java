@@ -7,7 +7,7 @@ package array;
    3,2,1 -> 1,2,3
 
    if it is in descending order like 6 5 4 3 2 1 -> reverse
-   Encounter the first a[i - 1] < a[i], need to find the smallest element that is larger than a[i - 1] from its right
+   Encounter the first a[i - 1] < a[i] from the right side, need to find the smallest element that is larger than a[i - 1] from its right
    swap both, then reverse the right part (i - 1, end]
  */
 public class L31 {

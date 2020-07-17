@@ -18,14 +18,14 @@ public class L274 {
 
         int len = citations.length;
         int[] count = new int[len + 1]; // 0, 1, ... len
-        for (int c : citations) {
+        for (int c : citations) { // Convert to how many paper with that specific citations
             count[Math.min(c, len)]++;
         }
 
         int sum = 0;
         for (int i = len; i >= 0; i--) {
             sum += count[i];
-            if (sum >= i) {
+            if (sum >= i) { // The first time seeing sum >= i means that we have that many paper with i amount of citations
                 return i;
             }
         }

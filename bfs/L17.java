@@ -1,6 +1,12 @@
 package bfs;
 
-/* Letter combinations of a phone number */
+/* Letter combinations of a phone number
+*  Input: "23"
+*  a b c
+*  b c ad ae af
+*  c ad ae af bd be bf
+*  ad ae af bd be bf cd ce cf
+* */
 
 import java.util.*;
 

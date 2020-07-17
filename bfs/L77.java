@@ -2,11 +2,17 @@ package bfs;
 
 import java.util.*;
 
-/* Return all possible combinations of k numbers out of 1 ... n */
+/* Return all possible combinations of k numbers out of 1 ... n
+*  1,2,3,4
+*  if k = 2
+*  12,13,14,23,24,34
+*  It is combination -> 34 and 43 are considered the same one
+* */
 
 public class L77 {
     public List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> res = new ArrayList<>();
+        // Queue stores List<Integer> for poll and offer
         Queue<List<Integer>> queue = new LinkedList<>();
         queue.offer(new ArrayList<>());
 

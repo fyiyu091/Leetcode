@@ -25,6 +25,7 @@ public class L273 {
         return res.trim();
     }
 
+    // For numbers that are below 1000
     private String convert(int n) {
         if (n == 0) {
             return "";

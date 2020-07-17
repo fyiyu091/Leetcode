@@ -1,6 +1,8 @@
 package array;
 
-/* 3 Sum Closest */
+/* 3 Sum Closest
+*  dist = target - num1 - num2 - num3
+* */
 
 import java.util.Arrays;
 

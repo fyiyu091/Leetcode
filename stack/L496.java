@@ -1,4 +1,4 @@
-package array;
+package stack;
 
 /*
    Find the next greater element

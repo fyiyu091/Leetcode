@@ -1,5 +1,8 @@
 package dfs;
 
+/*
+   Coin change, find the minimum amount to match the target
+ */
 public class L322 {
     public int coinChange(int[] coins, int amount) {
         if (coins == null || coins.length == 0) {

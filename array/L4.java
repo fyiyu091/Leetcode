@@ -8,6 +8,7 @@ public class L4 {
         int len2 = nums2.length;
         int l = (len1 + len2 + 1) / 2;
         int r = (len1 + len2 + 2) / 2;
+        // Both odd and even case will work
         return (helper(nums1, 0, nums2, 0, l) + helper(nums1, 0, nums2, 0, r)) / 2.0;
     }
 
@@ -25,6 +26,7 @@ public class L4 {
         int tmp1 = Integer.MAX_VALUE;
         int tmp2 = Integer.MAX_VALUE;
 
+        // Binary reduction idea
         if (start1 + k / 2 - 1 < nums1.length) {
             tmp1 = nums1[start1 + k / 2 - 1];
         }

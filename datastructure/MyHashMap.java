@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class MyHashMap<K, V> {
-    private class Cell<K, V> {
+    private static class Cell<K, V> {
         private K key;
         private V val;
         private Cell(K key, V val) {

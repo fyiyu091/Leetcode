@@ -33,10 +33,10 @@ public class L215 {
 
     private int partition(int[] nums, int left, int right) {
         int pivotIdx = right, pivotVal = nums[right];
-        // [left, i] all smaller, (i, j) all larger, [j, right - 1] all unchecked
+        // [left, i] all smaller, (i, j) all larger or equal, [j, right - 1] all unchecked
         int i = left - 1;
         for (int j = left; j < right; j++) {
-            if (nums[j] < pivotVal) {
+            if (nums[j] < pivotVal) { // if equal, will not swap
                 swap(nums, ++i, j);
             }
         }

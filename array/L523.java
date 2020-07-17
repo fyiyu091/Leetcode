@@ -17,7 +17,7 @@ public class L523 {
         int sum = 0;
         for (int i = 0; i < nums.length; i++) {
             sum += nums[i];
-            // if k == 0, then we are looking for the exact same same sum
+            // if k == 0, then we are looking for the exact same sum
             int reminder = k == 0 ? sum : sum % k;
             if (map.containsKey(reminder)) {
                 if (i - map.get(reminder) >= 2) {

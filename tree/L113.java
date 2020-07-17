@@ -27,7 +27,7 @@ public class L113 {
         }
 
         path.add(curr.val);
-        dfs(res, path, curr.left, sum - curr.val);
+        dfs(res, path, curr.left, sum - curr.val); // could set it back but it will be adding curr.val again, so no need to
         dfs(res, path, curr.right, sum - curr.val);
         path.remove(path.size() - 1);
     }

@@ -1,6 +1,8 @@
 package array;
 
-/* Three case: no zero, one zero, two zeros */
+/*
+  Product of array except self
+Three case: no zero, one zero, two zeros */
 
 public class L238 {
     public int[] productExceptSelf(int[] nums) {

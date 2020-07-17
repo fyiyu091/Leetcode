@@ -1,6 +1,6 @@
 package tree;
 
-/* Find the largest subtree with is BST */
+/* Find the largest subtree which is BST */
 
 public class L333 {
     private int max = 0;

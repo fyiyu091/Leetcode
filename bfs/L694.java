@@ -5,7 +5,13 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Set;
 
-/* Number of distinct islands */
+/* Number of distinct islands
+*  1 1 1  #R#RL#
+*    1
+*
+*  1 1 1  #R#R#L
+*      1
+* */
 
 public class L694 {
     private static final int[][] DIRECTIONS = {{0, 1}, {0, -1}, {-1, 0}, {1, 0}};
@@ -48,7 +54,7 @@ public class L694 {
                     sb.append(MARK[x]);
                 }
             }
-            sb.append('#');
+            sb.append('#'); // Adding this at each level
         }
         res.add(sb.toString());
     }
