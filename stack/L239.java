@@ -1,4 +1,4 @@
-package array;
+package stack;
 
 import java.util.Deque;
 import java.util.LinkedList;
@@ -20,6 +20,7 @@ public class L239 {
                 update(deque, nums[i]);
                 continue;
             }
+            // Check to remove the first() first
             if (i >= k && deque.peekFirst() == nums[i - k]) {
                 deque.pollFirst();
             }

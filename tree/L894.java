@@ -2,12 +2,10 @@ package tree;
 
 /* All possible full binary trees */
 
-import com.sun.source.tree.Tree;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class L894 {
+public class    L894 {
     public List<TreeNode> allPossibleFBT(int N) {
         List<TreeNode> res = new ArrayList<>();
         if (N % 2 == 0) {

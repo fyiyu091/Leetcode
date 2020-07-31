@@ -6,6 +6,7 @@ import java.util.Stack;
     stack bottom keeps a left limit of the valid parentheses
     E.g. ))) ... case
     seeing ), always pop to redefine the left boundary of the valid parentheses
+    (((
  */
 
 public class L32 {
@@ -26,7 +27,7 @@ public class L32 {
                 stack.push(i);
             }
             else if (ch == ')') {
-                int idx = stack.pop();
+                stack.pop();
                 if (stack.isEmpty()) {
                     stack.push(i);
                 }

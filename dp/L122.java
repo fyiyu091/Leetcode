@@ -1,6 +1,15 @@
 package dp;
 
-/* Stock II */
+/* Stock II
+*
+*           7   1  5  3  6  4
+ *  buy min -7  -1 -1 1  1  3
+ *  sell 0  0   0  4  4  7  7
+ *
+ *           2   3   4   5
+ *  buy min -2  -2  -2  -2
+ *  sell 0   0   1   2   3
+* */
 
 public class L122 {
     public int maxProfit(int[] prices) {
@@ -16,10 +25,5 @@ public class L122 {
         }
 
         return sell;
-    }
-
-    public static void main(String[] args) {
-        L122 test = new L122();
-        test.maxProfit(new int[] {7,1,5,3,6,4});
     }
 }

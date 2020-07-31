@@ -1,4 +1,4 @@
-package graph;
+package unionfind;
 
 public class StandardUnionFind {
     class Vertex {

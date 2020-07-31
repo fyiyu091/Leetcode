@@ -7,7 +7,7 @@ package stack;
    p[2] - p[1] -> [1,1]
    p[6] - p[3] -> [3,5]
 
-   [0,2,7,10,8,15,16] this is the prefix sum array -> p[x] - p[y] representing arr subarray sum [x - 1, y]
+   [0,2,7,10,8,15,16] this is the prefix sum array -> p[y] - p[x] representing arr subarray sum [x, y - 1]
    Deque only stores the index of prefix sum array
    deque: 0
    deque: 0 1 -> looking for if the new coming prefix - the first element is >= k, it is not

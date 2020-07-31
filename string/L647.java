@@ -1,7 +1,10 @@
 package string;
 
-/* Count how many palindromic substrings in the string */
-/* substring two pointer expand solution */
+/* Count how many palindromic substrings in the string
+   substring two pointer expand solution
+   Same method as the longest substring
+   But add res along the way
+*/
 
 public class L647 {
     public int countSubstrings(String s) {

@@ -2,6 +2,10 @@ package iterator;
 
 import java.util.Iterator;
 
+/*
+    Once peek, advance the iterator
+ */
+
 class PeekingIterator implements Iterator<Integer> {
     private Iterator<Integer> it;
     private Integer peek;

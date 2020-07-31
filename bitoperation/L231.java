@@ -2,6 +2,7 @@ package bitoperation;
 
 /* Power of two
 *  Determine is the number is power of two
+*  numOfOne is 1
 * */
 
 public class L231 {

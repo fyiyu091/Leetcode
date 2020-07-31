@@ -14,7 +14,7 @@ public class L785 {
         int n = graph.length;
         Boolean[] colors = new Boolean[n];
         for (int i = 0; i < graph.length; i++) {
-            if (colors[i] == null && !dfs(graph, i, colors, false)) {
+            if (colors[i] == null && !dfs(graph, i, colors, true)) {
                 return false;
             }
         }

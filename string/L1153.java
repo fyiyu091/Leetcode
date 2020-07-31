@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Map;
 
 public class L1153 {
-    public boolean canConvert(String str1, String str2) {
+    public boolean canConvert(String str1, String str2) { //TODO
         if (str1 == null || str2 == null) {
             return true;
         }
@@ -23,7 +23,11 @@ public class L1153 {
             map.put(str1.charAt(i), str2.charAt(i));
         }
 
-        int size = map.values().size();
+        /*
+           abcdefghijklmnopqrstuvwxyz
+           bcdefghijklmnopqrstuvwxyzq
+           This can be converted, why?
+         */
         return new HashSet<Character>(map.values()).size() < 26 ? false : true;
     }
 

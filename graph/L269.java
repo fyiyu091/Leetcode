@@ -5,14 +5,14 @@ package graph;
 *  adc
 *  means b is larger than d and c
 *
-*  ab
 *  abc
+*  ab
 *  this case is not valid
 * */
 
 import java.util.*;
 
-public class L269 { //TODO, have bug, ["ab", "adc"] case failed, can use boolean matrix to representing graph
+public class L269 {
     private boolean flag;
     public String alienOrder(String[] words) {
         if (words == null || words.length == 0) {
@@ -117,11 +117,6 @@ public class L269 { //TODO, have bug, ["ab", "adc"] case failed, can use boolean
     }
 
     public static void main(String[] args) {
-        L269 test = new L269();
-//        String[] words = new String[] {"abc", "ab"};
-        String[] words1 = new String[] {"z", "z"};
-        String[] words2 = new String[] {"wnlb"};
-        System.out.println(test.alienOrder(words1));
-        System.out.println(test.alienOrder(words2));
+        // whether the
     }
 }

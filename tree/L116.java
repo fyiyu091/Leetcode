@@ -5,25 +5,23 @@ package tree;
 public class L116 {
     public Node connect(Node root) {
         if (root == null) {
-            return root;
+            return null;
         }
 
-        Node leftMost = root;
+        Node head = root;
+        while (head.left != null) { // Guaranteed to not having lower level
+            Node curr = head;
 
-        while (leftMost.left != null) {
-            Node head = leftMost;
+            while (curr != null) {
+                curr.left.next = curr.right;
 
-            while (head != null) {
-                head.left.next = head.right;
-
-                if (head.next != null) {
-                    head.right.next = head.next.left;
+                if (curr.next != null) {
+                    curr.right.next = curr.next.left;
                 }
 
-                head = head.next;
+                curr = curr.next;
             }
-
-            leftMost = leftMost.left;
+            head = head.left; // No need to use another variable to save head because head = head.left will do
         }
 
         return root;

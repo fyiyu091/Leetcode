@@ -47,17 +47,4 @@ public class LongestCycle {
             graph.get(next).add(cur);
         }
     }
-
-    public static void main(String[] args) {
-        LongestCycle test = new LongestCycle();
-        List<List<Integer>> edges = new ArrayList<>();
-        edges.add(Arrays.asList(0,1));
-        edges.add(Arrays.asList(1,2));
-        edges.add(Arrays.asList(2,3));
-        edges.add(Arrays.asList(3,4));
-        edges.add(Arrays.asList(4,1));
-        edges.add(Arrays.asList(2,5));
-        edges.add(Arrays.asList(5,1));
-        System.out.println(test.findLongestCycle(6, edges));
-    }
 }

@@ -1,4 +1,4 @@
-package string;
+package slidingwindow;
 
 /* Longest substring without repeating characters */
 

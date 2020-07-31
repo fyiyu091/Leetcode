@@ -1,6 +1,11 @@
 package dp;
 
-/* Stock I */
+/* Stock I
+*          7 1 5 3 6 4
+*  buy min
+*  sell 0
+*
+* */
 
 public class L121 {
     public int maxProfit(int[] prices) {

@@ -1,6 +1,19 @@
 package string;
 
-/* Longest palindromic substring */
+/* Longest palindromic substring
+*
+*  maxLen = 3
+*
+*  0 1 2 3 4 5 6 7
+*  i = 4, start should = 3, end should = 5
+*  3 = 4 - (3 - 1) / 2
+*  5 = 4 + 3 / 2
+*
+*  same case but maxLen = 4
+*  i = 4, start should = 3, end should = 6
+*  3 = 4 - (4 - 1) / 2
+*  6 = 4 + 4 / 2
+* */
 
 public class L5 {
     public String longestPalindrome(String s) {

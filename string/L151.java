@@ -2,7 +2,7 @@ package string;
 
 /* Reverse words in a String */
 
-public class L151 { //TODO: another method
+public class L151 {
     public String reverseWords(String s) {
         if (s == null || s.length() == 0) {
             return null;
