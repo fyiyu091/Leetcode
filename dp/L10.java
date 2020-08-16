@@ -4,7 +4,7 @@ package dp;
    how to branch, * can match zero or 1 or 2 ... preceding character
    dp[i][j] whether [0, i) and [0, j) can be matched
 
-   a a b
+   a  a  b
    c * a * b
        "" a a b
     "" T  F F F
