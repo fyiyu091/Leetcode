@@ -9,6 +9,13 @@ import java.util.Queue;
    Serialize and deserialize N-ary tree
    Store the # of children node in the String
    So no need to store the null character
+                   1
+               3   2   4
+            5    6
+   1,3,3,2,4,2,5,6
+                  1
+                3 2 4
+               5 6
  */
 public class L428 {
     class Node {

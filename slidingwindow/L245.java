@@ -19,7 +19,7 @@ public class L245 {
                 }
                 idx[0] = i;
             }
-            if (words[i].equals(word2)) {
+            if (words[i].equals(word2)) { // Why do I need this line? This is for word1 != word2 purpose
                 idx[1] = i;
             }
             if (idx[0] != -1 && idx[1] != -1 && !word1.equals(word2)) {

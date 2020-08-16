@@ -1,6 +1,13 @@
 package string;
 
-/* Integer to English words */
+/* Integer to English words
+   10,001,000
+   Ten million one Thousand
+   10,001,000 % 1000 = 0
+   10,001,000 / 1000 = 10,001
+   10,001 % 1000 = 1
+   10,001 / 1000 = 10
+*/
 
 public class L273 {
     private static final String[] TEN = {"", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
@@ -24,6 +31,12 @@ public class L273 {
         return res.trim();
     }
 
+    /*
+        986
+        nine hundred helper(86)
+        nine hundred eighty (6)
+        nine hundred eighty six
+     */
     private String helper(int num) {
         if (num == 0) {
             return "";

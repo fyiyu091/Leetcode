@@ -1,6 +1,10 @@
 package stack;
 
-/* Validate stack sequences */
+/* Validate stack sequences
+
+   The key is every pushed number have to be popped
+
+*/
 
 import java.util.Stack;
 

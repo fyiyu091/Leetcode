@@ -22,6 +22,7 @@ public class L785 {
         return true;
     }
 
+    // Return if the curr can be marked with color
     private boolean dfs(int[][] graph, int curr, Boolean[] colors, boolean color) {
         if (colors[curr] != null && colors[curr] != color) {
             return false;

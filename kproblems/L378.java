@@ -2,6 +2,9 @@ package kproblems;
 
 import java.util.*;
 
+/*
+    2D matrix K smallest
+ */
 public class L378 {
     public int kthSmallest(int[][] matrix, int k) {
         if (matrix == null || matrix.length == 0 || matrix[0] == null || matrix[0].length == 0) {

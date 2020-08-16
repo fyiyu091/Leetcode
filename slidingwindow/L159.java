@@ -8,10 +8,9 @@ public class L159 {
             return 0;
         }
 
-        int start = 0;
+        int start = 0, end = 0;
         char char1 = '\0', char2 = '\0';
         int lastIdx1 = -1, lastIdx2 = -1;
-        int end = 0;
         int max = 0;
 
         while (end < s.length()) {
@@ -29,7 +28,7 @@ public class L159 {
                     lastIdx1 = end;
                 }
                 else {
-                    char2 = ch;
+                    char2 = ch; // Assign this ch to char2
                     start = lastIdx2 + 1;
                     lastIdx2 = end;
                 }

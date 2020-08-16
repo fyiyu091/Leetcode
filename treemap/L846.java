@@ -24,10 +24,9 @@ public class L846 {
                     return false;
                 }
 
-                if (treeMap.get(i) == 1) {
+                treeMap.put(i, treeMap.get(i) - 1);
+                if (treeMap.get(i) == 0) {
                     treeMap.remove(i);
-                } else {
-                    treeMap.put(i, treeMap.get(i) - 1);
                 }
             }
         }

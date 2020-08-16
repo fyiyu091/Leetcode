@@ -32,7 +32,7 @@ public class CriticalEdge {
             }
             dfs(graph, curr, nei, labels, res);
             labels[curr] = Math.min(labels[curr], labels[nei]);
-            if (labels[nei] > firstTimeLabel) {
+            if (labels[nei] > firstTimeLabel) { // At this point labels[nei] is updated with the smallest value
                 res.add(Arrays.asList(curr, nei));
             }
         }
