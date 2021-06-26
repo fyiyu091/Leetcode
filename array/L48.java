@@ -17,6 +17,11 @@ public class L48 {
             return;
         }
 
+        /*
+            Why k can't be <= len - 1?
+            Because when k == 0, k and len - 1 is swapped already
+            If setting k to len - 1, it would redo the k == 0 case
+         */
         for (int k = 0; k < len - 1; k++) {
             int tmp = matrix[i][i + k];
             matrix[i][i + k] = matrix[i + len - 1 - k][i];

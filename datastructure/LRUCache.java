@@ -3,6 +3,20 @@ package datastructure;
 import java.util.HashMap;
 import java.util.Map;
 
+/*
+    What are the requirements of LRUCache
+    1. When the key is in the cache, O(1) returns the value and move it to the most recent
+    2. When the key is not in the cache, return null
+    3. Put key, value pair
+        1. Key exists, overwrite the move it to the most recent
+        2. Key doesn't exists:
+            1. Hasn't reach capacity, add it to the most recent
+            2. Remove the least recent and add it to the most recent
+
+
+     DummyTail -> x -> y -> z -> DummyHead
+ */
+
 class LRUCache {
     class ListNode {
         private int key;

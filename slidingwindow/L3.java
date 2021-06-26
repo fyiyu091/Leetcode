@@ -17,6 +17,7 @@ public class L3 {
             int ch = s.charAt(end);
             cnt[ch]++;
 
+            // Delete all the way until the ch count is not larger than 1
             while (cnt[ch] > 1) {
                 --cnt[s.charAt(start++)];
             }

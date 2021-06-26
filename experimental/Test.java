@@ -1,10 +1,12 @@
 package experimental;
 
+import org.jetbrains.annotations.NotNull;
+
 public class Test {
+    static void print(@NotNull String str) {
+        System.out.println(str);
+    }
     public static void main(String[] args) {
-        for (int i = 0; i < 10; i = i) {
-            i += 1;
-            System.out.println("yes");
-        }
+        print(null);
     }
 }

@@ -89,6 +89,7 @@ public class L269 {
                     graph.put(ch2, new HashSet<>());
                 }
                 if (ch1 != ch2) {
+                    // This is the only place that we add to the graph
                     graph.get(ch1).add(ch2);
                     isValid = true; // abc, ab case should return ""
                     break;

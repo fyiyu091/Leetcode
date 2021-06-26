@@ -1,6 +1,15 @@
 package miscellaneous;
 
-/* Max points on a line */
+/* Max points on a line
+*  On the same line would have the same slope
+*  However, we do have few edge cases need to take care of
+*  1. What if the delta Y is 0 -> key is 0 then
+*  2. what if the delta X is 0 -> key is inf which would be a string
+*  3. what if it's the same point
+*
+*  Another point is the function to get the GCD
+*  Another point is to use String as the key of the slope
+* */
 
 import java.util.HashMap;
 import java.util.Map;
@@ -40,6 +49,7 @@ public class L149 {
                     pointMax = Math.max(map.get(key), pointMax);
                 }
             }
+            // Based on one point, compare the line with the most points with the other point bases
             res = Math.max(res, pointMax + same + 1);
         }
         return res;
@@ -47,10 +57,10 @@ public class L149 {
 
     /*
        x = 15, y = 25
-       x = 25, y = 15
-       x = 15, y = 10
-       x = 10, y = 5
-       y = 5, x = 0 -> gcd is 5
+       x = 25, y = 15 (0 * 25 + 15)
+       x = 15, y = 10 (1 * 15 + 10)
+       x = 10, y = 5 (1 * 10 + 5)
+       y = 5, x = 0 -> gcd is 5 (2 * 5 + 0)
      */
     private int getGCD(int x, int y) {
         if (y == 0) return x;

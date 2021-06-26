@@ -32,12 +32,15 @@ public class CheckCycle {
             return false;
         }
 
+        // Visiting the current vertex
         status.put(curr, 1);
+        // graph.get(curr) would return all the neighbor vertex
         for (Vertex nei : graph.get(curr)) {
             dfs(nei, graph, status, res);
         }
 
         res.add(0, curr.val);
+        // Mark the current vertex as visited
         status.put(curr, 2);
         return false;
     }

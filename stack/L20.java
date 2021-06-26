@@ -13,31 +13,31 @@ public class L20 {
         for (char ch : s.toCharArray()) {
             switch (ch) {
                 case '(': {
-                    stack.push(')');
+                    stack.push('(');
                     break;
                 }
                 case '{': {
-                    stack.push('}');
+                    stack.push('{');
                     break;
                 }
                 case '[': {
-                    stack.push(']');
+                    stack.push('[');
                     break;
                 }
                 case ')': {
-                    if (stack.isEmpty() || stack.pop() != ')') {
+                    if (stack.isEmpty() || stack.pop() != '(') {
                         return false;
                     }
                     break;
                 }
                 case '}': {
-                    if (stack.isEmpty() || stack.pop() != '}') {
+                    if (stack.isEmpty() || stack.pop() != '{') {
                         return false;
                     }
                     break;
                 }
                 case ']': {
-                    if (stack.isEmpty() || stack.pop() != ']') {
+                    if (stack.isEmpty() || stack.pop() != '[') {
                         return false;
                     }
                     break;

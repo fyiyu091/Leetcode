@@ -3,6 +3,9 @@ package datastructure;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/*
+    Using two queues, when pop,
+ */
 public class StackUsingQueue<T> {
     private Queue<T> q1;
     private Queue<T> q2;

@@ -20,6 +20,7 @@ public class L161 {
                     idxS++;
                     idxT++;
                 }
+                // Moving the one with the longer length
                 else if (lenS < lenT) {
                     idxT++;
                 }

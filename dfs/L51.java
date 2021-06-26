@@ -21,7 +21,7 @@ public class L51 {
 
         // i + j
         int forward = 0;
-        // i - j + n - 1
+        // i - j + n - 1, n - 1 to keep it positive
         int backward = 0;
         // vertical
         int vertical = 0;

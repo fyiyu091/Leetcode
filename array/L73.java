@@ -5,6 +5,9 @@ package array;
    mark the corresponding row and col 0 to the first row and first col,
    however before do that need to check whether the first row or col
    has 0 originally
+
+   Solution: Used the first row and the first col to mark if the row or column contains 0
+   But before doing that need to mark to make sure the first row or col have 0 or not
  */
 public class L73 {
     public void setZeroes(int[][] matrix) {

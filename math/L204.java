@@ -2,7 +2,7 @@ package math;
 
 /* Count the number of prime numbers that are less than a non-negative number */
 
-public class L204 {
+public class   L204 {
     public int countPrimes(int n) {
         int res = 0;
         for (int i = 2; i < n; i++) {

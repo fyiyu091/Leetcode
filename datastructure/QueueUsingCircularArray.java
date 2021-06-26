@@ -1,5 +1,10 @@
 package datastructure;
 
+/*
+    Design a queue using array with a capacity
+    1. (idx + 1) % arr.length for the circular operation
+    2. Using a size and cap for measuring whether the queue is full
+ */
 public class QueueUsingCircularArray<T> {
     private static final int INITIAL_CAP = 10;
     private T[] arr;

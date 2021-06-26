@@ -14,11 +14,13 @@ public class L15 {
         }
 
         Arrays.sort(nums);
+        int i = 0;
 
-        for (int i = 0; i < nums.length - 2; i++) {
+        while (i < nums.length - 2) {
             int left = i + 1;
             int right = nums.length - 1;
             int target = 0 - nums[i];
+            // Exhaust all the combinations with i as the index
             while (left < right) {
                 if (nums[left] + nums[right] == target) {
                     res.add(Arrays.asList(nums[i], nums[left], nums[right]));
@@ -38,9 +40,11 @@ public class L15 {
                     left++;
                 }
             }
+            // To avoid the same i
             while (i < nums.length - 2 && nums[i] == nums[i + 1]) {
                 i++;
             }
+            i++;
         }
 
         return res;

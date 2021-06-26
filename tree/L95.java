@@ -7,7 +7,7 @@ import java.util.List;
 
 /* Generate all structurally unique BST that stores 1 ... n
 *  To do this level, needs the return from the lower levels
-*
+*  Any subtree would be bst as well
 * */
 public class L95 {
     public List<TreeNode> generateTrees(int n) {

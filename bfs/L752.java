@@ -37,6 +37,7 @@ public class L752 {
                     for (int j = 0; j < 2; j++) {
                         charArr[i] = CONVERT[Integer.parseInt(String.valueOf(origin))][j];
                         String tmp = String.valueOf(charArr);
+                        // If it's not the deadset and it wasn't visited before
                         if (!deadSet.contains(tmp) && visited.add(tmp)) {
                             queue.offer(tmp);
                         }

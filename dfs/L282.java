@@ -5,7 +5,7 @@ package dfs;
 import java.util.ArrayList;
 import java.util.List;
 
-public class L282 {
+public class    L282 {
     public List<String> addOperators(String num, int target) {
         List<String> res = new ArrayList<>();
         if (num == null || num.length() == 0) return res;
@@ -34,6 +34,7 @@ public class L282 {
             }
             else {
                 sb.append("+" + val);
+                // Prev is the current value
                 dfs(res, sb, num, i + 1, sum + val, val, target);
                 sb.setLength(originLen);
 
@@ -42,6 +43,7 @@ public class L282 {
                 sb.setLength(originLen);
 
                 sb.append("*" + val);
+                // Prev is the current value * pre value, pre value would including more values if continue with *
                 dfs(res, sb, num, i + 1, (sum - preVal) + (val * preVal), val * preVal, target);
                 sb.setLength(originLen);
             }

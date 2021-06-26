@@ -3,6 +3,9 @@ package datastructure;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
+/*
+    Always keep the maxHeap size is 1+ minHeap size
+ */
 public class MedianDataStream {
     private Queue<Integer> maxHeap;
     private Queue<Integer> minHeap;
@@ -11,7 +14,7 @@ public class MedianDataStream {
     /** initialize your data structure here. */
     public MedianDataStream() {
         maxHeap = new PriorityQueue<>((a, b) -> (b - a));
-        minHeap = new PriorityQueue<>((a, b) -> (a - b));
+        minHeap = new PriorityQueue<>();
         size = 0;
     }
 

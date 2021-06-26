@@ -20,6 +20,7 @@ public class L76 {
             cnt.put(ch, cnt.getOrDefault(ch, 0) + 1);
         }
 
+        // Two size array to save the window size, because start and end would keep moving
         int[] indice = new int[2];
         Arrays.fill(indice, -1);
         int start = 0;
@@ -28,6 +29,7 @@ public class L76 {
         while (end < s.length()) {
             char ch = s.charAt(end);
             windowCnt.put(ch, windowCnt.getOrDefault(ch, 0) + 1);
+            // While it is valid, keep shrink the window size and keep updating the results
             while (isValidWindow(windowCnt, cnt)) {
                 if (end - start + 1 < minLen) {
                     indice[0] = start;

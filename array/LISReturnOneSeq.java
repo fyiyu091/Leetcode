@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class LISReturnOneSeq {
+public class    LISReturnOneSeq {
     public List<Integer> longestIncreaseSequenceOneSeq(int[] nums) {
         List<Integer> buffer = new ArrayList<>();
         List<Integer> res = new ArrayList<>();

@@ -19,6 +19,7 @@ public class L133 {
 
         visited.put(curr, new Node(curr.val));
         for (Node next : curr.neighbors) {
+            // Adding the copied one
             visited.get(curr).neighbors.add(dfs(next, visited));
         }
 

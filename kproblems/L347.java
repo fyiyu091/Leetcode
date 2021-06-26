@@ -7,6 +7,7 @@ import java.util.*;
 public class L347 {
     public int[] topKFrequent(int[] nums, int k) {
         int[] res = new int[k];
+        // Key is the num and value is the frequency
         Map<Integer, Integer> map = new HashMap<>();
         int len = nums.length;
         // The index of the bucket means the frequency of the element
@@ -24,8 +25,15 @@ public class L347 {
             bucket[map.get(key)].add(key);
         }
 
-        // Have a bucket and how to store it to res array
-        // Will iterate all the element in the bucket array
+        /*
+        We have a bucket that the idx is the frequency and the value is a list of nums
+        also, we have a k size array that's to store the results
+        Purpose is to fill up the k size array
+            num:       5
+                   5   6
+                   2 1 9 8 7
+            idx: 0 1 2 3 4 5
+         */
         int idx = res.length - 1;
         for (int i = bucket.length - 1; i >= 0; i--) {
             if (bucket[i] != null) {

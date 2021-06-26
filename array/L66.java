@@ -4,6 +4,7 @@ package array;
    [1,2,3,4] -> [1,2,3,5]
    [8,9,9] -> [9,0,0]
    [9,9,9] -> [1,0,0,0]
+
  */
 public class L66 {
     public int[] plusOne(int[] digits) {
@@ -19,7 +20,7 @@ public class L66 {
             digits[i] = 0;
         }
 
-        // If reach this point, meaning we will have one more digit
+        // If reach this point, meaning we will have one more digit carry over
         int[] res = new int[digits.length + 1];
         res[0] = 1;
         return res;

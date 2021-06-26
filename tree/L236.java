@@ -23,6 +23,10 @@ public class L236 {
             }
         }
 
+        // How many of the child hits the target?
+        // If 0, return null
+        // If 1, just return that one
+        // If > 1, return root
         if (count <= 1) {
             return tmp;
         }

@@ -16,16 +16,23 @@ public class L179 {
             arr[i] = nums[i];
         }
 
-        Comparator<Integer> comp = new Comparator<Integer>() {
+//        Comparator<Integer> comp = new Comparator<Integer>() {
+//            @Override
+//            public int compare(Integer o1, Integer o2) {
+//                String str1 = String.valueOf(o1) + String.valueOf(o2);
+//                String str2 = String.valueOf(o2) + String.valueOf(o1);
+//                return str2.compareTo(str1); // if it returns -1 means str1 is larger means o1 should be in front
+//            }
+//        };
+
+        Arrays.sort(arr, new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {
                 String str1 = String.valueOf(o1) + String.valueOf(o2);
                 String str2 = String.valueOf(o2) + String.valueOf(o1);
                 return str2.compareTo(str1); // if it returns -1 means str1 is larger means o1 should be in front
             }
-        };
-
-        Arrays.sort(arr, comp);
+        });
 
         if (arr[0] == 0) {
             return "0";

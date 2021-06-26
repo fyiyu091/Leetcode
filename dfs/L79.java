@@ -1,6 +1,8 @@
 package dfs;
 
-/* Given a 2D board and a word, find if the word exists in the grid */
+/* Given a 2D board and a word, find if the word exists in the grid
+*  One special about this solution is that the dfs returns a boolean to the up level
+* */
 
 import java.util.HashSet;
 import java.util.Set;
@@ -40,6 +42,7 @@ public class L79 {
                 return true;
             }
         }
+        // Remove from the visited so that the char can be used in a different path
         visited.remove(i * board[0].length + j);
         return false;
     }

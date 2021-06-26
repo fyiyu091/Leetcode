@@ -21,6 +21,7 @@ public class L450 {
             }
             int val = findMin(root.right);
             root.val = val;
+            // Need to delete the min value on the right side as well
             root.right = deleteNode(root.right, val);
         }
         return root;

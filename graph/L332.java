@@ -1,6 +1,9 @@
 package graph;
 
-/*Reconstruct itinerary */
+/*Reconstruct itinerary
+* 一笔画问题
+* 有路就走，because we need to sort by the alphabetical order, so use PriorityQueue
+* */
 
 import java.util.*;
 

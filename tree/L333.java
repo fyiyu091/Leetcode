@@ -1,6 +1,9 @@
 package tree;
 
-/* Find the largest subtree which is BST */
+/* Find the largest subtree which is BST
+*  For this level to make a decision, will need the information about left max and right min
+*  the max of left and right
+* */
 
 public class L333 {
     private int max = 0;

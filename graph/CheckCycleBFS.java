@@ -12,6 +12,7 @@ public class CheckCycleBFS {
 
         int count = 0;
         int[] inDegrees = new int[numCourses];
+        // Each index is like each vertex, the list of integer on each index is like the neighbors
         List<Integer>[] graph = (LinkedList<Integer>[]) new LinkedList[numCourses];
         for (int i = 0; i < graph.length; i++) {
             graph[i] = new LinkedList<>();
@@ -25,6 +26,7 @@ public class CheckCycleBFS {
 
         Queue<Integer> queue = new LinkedList<>();
         for (int i = 0; i < inDegrees.length; i++) {
+            // No indegree, then offer into the queue
             if (inDegrees[i] == 0) {
                 queue.offer(i);
             }

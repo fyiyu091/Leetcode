@@ -24,7 +24,10 @@ public class L105 {
             return null;
         }
 
+        // The preorder one has to be the root
         TreeNode root = new TreeNode(preorder[pStart]);
+        // Find the idx of the value in inorder, left would be left subtree, right would be right subtree
+        // How many in the left subtree? idx - istart is not including the idx
         int idx = map.get(preorder[pStart]);
         root.left = helper(preorder, pStart + 1, pStart + idx - iStart, inorder, iStart, idx - 1, map);
         root.right = helper(preorder, pStart + idx - iStart + 1, pEnd, inorder, idx + 1, iEnd, map);

@@ -1,7 +1,5 @@
 package array;
 
-import java.util.Stack;
-
 /* The optimal solution will be the space O(1) two pointers from both sides to middle, update leftMax and rightMax*/
 
 public class L42 {
@@ -21,6 +19,8 @@ public class L42 {
             leftMax = Math.max(leftMax, height[left]);
             rightMax = Math.max(rightMax, height[right]);
             if (leftMax < rightMax) {
+                // Why we can define the leftMax be the minMax, because we won't find any height that will be
+                // smaller
                 res += leftMax - height[left];
                 left++;
             }

@@ -31,16 +31,22 @@ public class L215 {
         }
     }
 
+    // @param int array
+    // @param left index
+    // @param right index
+    // @return the index that partition the array into two parts
     private int partition(int[] nums, int left, int right) {
+        // Always picks the right most element
         int pivotIdx = right, pivotVal = nums[right];
         // [left, i] all smaller, (i, j) all larger or equal, [j, right - 1] all unchecked
-        int i = left - 1;
+        // Why can't i start right at left?
+        int i = left;
         for (int j = left; j < right; j++) {
             if (nums[j] < pivotVal) { // if equal, will not swap
-                swap(nums, ++i, j);
+                swap(nums, i++, j);
             }
         }
-        swap(nums, ++i, pivotIdx);
+        swap(nums, i, pivotIdx);
         return i;
     }
 

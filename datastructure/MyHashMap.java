@@ -3,6 +3,12 @@ package datastructure;
 import java.util.LinkedList;
 import java.util.List;
 
+/*
+    An array, what's in the array?
+    A list, what's in the list?
+    A cell, what's in the cell?
+    key-value pair
+ */
 public class MyHashMap<K, V> {
     private static class Cell<K, V> {
         private K key;
@@ -78,6 +84,9 @@ public class MyHashMap<K, V> {
 
         List<Cell<K, V>> list = buckets[idx];
         for (Cell cell : list) {
+            // All the keys of the cell in the same buckets having the same hashcode
+            // Having the same hashcode doesn't mean that their are identical
+            // For instance, 10 % 5 = 0 and 15 % 5 = 0 but doesn't mean 10 == 15, right?
             if (cell.getKey().equals(key)) {
                 // The method here is remove first then add later, this way is easier
                 list.remove(cell);
@@ -129,6 +138,7 @@ public class MyHashMap<K, V> {
         for (List<Cell<K, V>> list : buckets) {
             if (list != null) {
                 for (Cell<K, V> cell : list) {
+                    // Get the new idx of the key of the cell
                     int idx = hashCodeOfKey(cell.getKey());
                     if (newBuckets[idx] == null) {
                         newBuckets[idx] = new LinkedList<Cell<K, V>>();

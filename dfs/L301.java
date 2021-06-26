@@ -1,10 +1,12 @@
 package dfs;
 
-/* Remove invalid parentheses */
 
 import java.util.ArrayList;
 import java.util.List;
 
+/* Remove invalid parentheses
+*  First, find out need to remove how many left and how many right
+* */
 public class L301 {
     public List<String> removeInvalidParentheses(String s) {
         List<String> res = new ArrayList<>();
@@ -35,11 +37,14 @@ public class L301 {
             path.setLength(path.length() - 1);
 
             // purpose of this check is to dedup
+            // Why do we need to dedup?
+            // If not dedup, would lead to duplicate results
+            // "()())()" -> ) at index 3 and ) at index 4, could have 3 + non 4 and non 3 + 4 situation
             // before going into the next level, make sure skip the adjacent same parentheses
-            while (index < s.length() - 1 && s.charAt(index) == s.charAt(index + 1)) {
-                index++;
-                removeL--;
-            }
+//            while (index < s.length() - 1 && s.charAt(index) == s.charAt(index + 1)) {
+//                index++;
+//                removeL--;
+//            }
             dfs(res, path, s, index + 1, removeL - 1, removeR, delta);
         }
         else if (s.charAt(index) == ')') {
@@ -47,10 +52,10 @@ public class L301 {
             dfs(res, path, s, index + 1, removeL, removeR, delta - 1);
             path.setLength(path.length() - 1);
 
-            while (index < s.length() - 1 && s.charAt(index) == s.charAt(index + 1)) {
-                index++;
-                removeR--;
-            }
+//            while (index < s.length() - 1 && s.charAt(index) == s.charAt(index + 1)) {
+//                index++;
+//                removeR--;
+//            }
             dfs(res, path, s, index + 1, removeL, removeR - 1, delta);
         }
         else {

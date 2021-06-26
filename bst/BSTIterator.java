@@ -15,6 +15,7 @@ public class BSTIterator {
     /** @return the next smallest number */
     public int next() {
         TreeNode node = stack.pop();
+        // Add the left of the right of the node
         TreeNode curr = node.right;
         while (curr != null) {
             stack.push(curr);

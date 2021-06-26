@@ -8,6 +8,8 @@ public class L88 {
             return;
         }
 
+        // Start from the end why?
+        // The value will not be overriden
         while (m > 0 && n > 0) {
             if (nums1[m - 1] > nums2[n - 1]) {
                 nums1[m + n - 1] = nums1[m - 1];

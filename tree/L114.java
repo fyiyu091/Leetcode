@@ -6,6 +6,8 @@ public class L114 {
     public void flatten(TreeNode root) {
         if (root == null) return;
 
+        // After these two steps
+        // Both left and right trees were flatten
         flatten(root.left);
         flatten(root.right);
         TreeNode right = root.right;

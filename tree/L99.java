@@ -15,6 +15,14 @@ public class L99 {
         return;
     }
 
+    /*
+        Why can't the prev just be TreeNode object
+        We want the TreeNode's reference to change, therefore need an array to point to the reference
+        to change?
+        If I just use a TreeNode, what happens during the recursion?
+        Because it's pass by the reference'copy, the lower level would point to a new TreeNode
+        while it won't affect the higher level
+     */
     private void find(TreeNode root, TreeNode[] prev, TreeNode[] needSwap) {
         if (root == null) {
             return;

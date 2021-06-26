@@ -5,6 +5,13 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+/*
+    Saying for [1,2,3]
+
+    First i = 0, size = 1 (Empty ArrayList) => ([], [1])
+    Second i = 1, size = 2 => ([], [2], [1], [1, 2])
+    Thirdly i = 2, size = 4 => ([], [3], [2], [2, 3], [1], [1, 3], [1, 2], [1, 2, 3])
+ */
 public class L78 {
     public List<List<Integer>> subsets(int[] nums) {
         // queue stores idx

@@ -11,6 +11,7 @@ public class L378 {
             return 0;
         }
 
+        // The int[] is the coordinate of the matrix
         Queue<int[]> minHeap = new PriorityQueue<>(new Comparator<int[]>() {
             @Override
             public int compare(int[] o1, int[] o2) {

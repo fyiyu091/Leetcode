@@ -2,7 +2,7 @@ package tree;
 
 /* Verify if a binary tree is balanced */
 
-public class L110 {
+public class   L110 {
     public boolean isBalanced(TreeNode root) {
         return getHeight(root) != -1;
     }

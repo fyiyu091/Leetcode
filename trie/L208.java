@@ -25,6 +25,7 @@ public class L208 {
             if (curr.children[ch - 'a'] == null) {
                 curr.children[ch - 'a'] = new TrieNode(ch);
             }
+            // If already exists, just go down the path
             curr = curr.children[ch - 'a'];
         }
         curr.isWord = true;

@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
+/*
+    1. Whenever the TreeNode is poped from the stack, add it to the res
+    2. Push right child before left child, as the left would poped out first
+ */
 public class StackPreorder {
     public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> res = new ArrayList<>();

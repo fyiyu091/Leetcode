@@ -1,5 +1,9 @@
 package tree;
 
+/*
+    The next level needs the info from this level
+    Also, the level needs the return from next level to make a decision
+ */
 public class L98 {
     public boolean isValidBST(TreeNode root) {
         return valid(root, null, null);

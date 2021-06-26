@@ -19,6 +19,8 @@ public class L113 {
             return;
         }
 
+        // If we just add to the results at the null level, we would get two duplicate results
+        // Therefore, add to the results at the leaf level
         if (curr.left == null && curr.right == null && sum == curr.val) {
             path.add(curr.val);
             res.add(new ArrayList<>(path));

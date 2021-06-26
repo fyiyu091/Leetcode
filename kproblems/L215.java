@@ -10,6 +10,7 @@ public class L215 {
             throw new IllegalArgumentException();
         }
 
+        // kth largest is the length - k + 1 smallest
         int kth = nums.length - k + 1;
 
         return helper(nums, 0, nums.length - 1, kth);
@@ -20,7 +21,10 @@ public class L215 {
             return nums[start];
         }
 
+        // Find a p index that lefts are all smaller and rights are all larger
         int p = partition(nums, start, end);
+        // Find out how large is p
+        //   2 3 4 p 6 -> p is 4th smallest which is 5 - 2 + 1 = 4, rank is 4th
         int rank = p - start + 1;
         if (rank == k) {
             return nums[p];

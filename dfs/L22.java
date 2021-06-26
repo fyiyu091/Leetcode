@@ -2,6 +2,11 @@ package dfs;
 
 /* Generate parentheses */
 
+/*
+                   (        ) (This right parenthesis is already delta < 0 so the next level would just return)
+          ((       ()      )(         ))
+    ((( (()  ()(  ())   )(( )()   ))(   )))
+ */
 import java.util.ArrayList;
 import java.util.List;
 
