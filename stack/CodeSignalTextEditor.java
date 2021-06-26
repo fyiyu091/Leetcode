@@ -41,7 +41,6 @@ public class CodeSignalTextEditor {
                         }
                         sb.replace(left, right, action[2]);
                     }
-
                     break;
 
                 case "BACKSPACE":
@@ -75,7 +74,7 @@ public class CodeSignalTextEditor {
                 case "REDO":
                     if (!redo.isEmpty()) {
                         StringBuilder prevSb = redo.pop();
-                        undo.push(sb);
+                        undo.push(new StringBuilder(sb));
                         sb = prevSb;
                     }
                     break;
