@@ -39,6 +39,7 @@ public class L329 {
                 mem[i][j] = Math.max(mem[i][j], dfs(matrix, ii, jj, mem));
             }
         }
+        // Why do we ++ here, think of a case that there is no larger neighbors, we should return 1 instead of 0
         return ++mem[i][j];
     }
 }

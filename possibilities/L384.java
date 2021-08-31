@@ -3,7 +3,7 @@ package possibilities;
 import java.util.Arrays;
 import java.util.Random;
 
-public class L384 {
+public class LminHeap {
     private int[] original;
 
     public L384(int[] nums) {

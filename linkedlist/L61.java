@@ -20,6 +20,11 @@ public class L61 {
             return head;
         }
 
+        /*
+         The way to find the Nth from the end is to use fast to reach out N
+         And slow fast moving right at the same pace until fast hits the end
+        */
+
         ListNode fast = head;
         while (k-- > 0 && fast != null) {
             fast = fast.next;

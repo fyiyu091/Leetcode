@@ -3,7 +3,10 @@ package array;
 import java.util.ArrayList;
 import java.util.List;
 
-/* LIS using ArrayList for O(nlogn) time complexity */
+/* LIS using ArrayList for O(nlogn) time complexity
+*  Every point in the arr means that what's the last element of the LIS in the length of the index
+*  So the best way is to always update the array to have a increasing
+* */
 
 public class L300 {
     public int lengthOfLIS(int[] nums) {
@@ -14,6 +17,7 @@ public class L300 {
         List<Integer> arr = new ArrayList<>();
         for (int n : nums) {
             int idx = findIdx(arr, n);
+            // Only two option, either replace the previous or add to the very end
             if (idx == arr.size()) {
                 arr.add(n);
             }

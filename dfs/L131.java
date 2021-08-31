@@ -21,7 +21,14 @@ public class L131 {
             res.add(new ArrayList<>(path));
         }
 
+        /*
+            aab
+                 a      aa    aab
+               a  ab   b
+             b
+         */
         for (int i = idx + 1; i <= s.length(); i++) {
+            // Have a condition to get into the dfs, otherwise not getting into it
             if (isPan(s.substring(idx, i))) {
                 path.add(s.substring(idx, i));
                 dfs(res, path, s, i);

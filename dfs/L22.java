@@ -20,6 +20,8 @@ public class L22 {
         return res;
     }
 
+    // Why does it return void instead of a value up, it's like we need a storage to store all the solutions when we goes
+    // very deep
     private void dfs(List<String> res, StringBuilder path, int n, int delta) {
         if (path.length() == 2 * n && delta == 0) {
             res.add(path.toString());

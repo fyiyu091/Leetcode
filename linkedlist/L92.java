@@ -17,6 +17,7 @@ public class L92 {
 
         ListNode prev = beforeReverse;
         // Recursively will not work in this case, unless add a search status
+        // Basically, reverse n times
         while (n-- > 0) {
             ListNode next = curr.next;
             curr.next = prev;
@@ -24,6 +25,7 @@ public class L92 {
             curr = next;
         }
 
+        // if m == 1, then we would just use prev after the reverse as the head
         if (beforeReverse != null) {
             beforeReverse.next = prev;
         }

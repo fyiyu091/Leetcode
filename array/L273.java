@@ -1,7 +1,7 @@
 package array;
 
-/* Integer to English words
-   No and
+/*
+   Integer to English words
  */
 public class L273 {
     private static final String[] TEN = {"", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};

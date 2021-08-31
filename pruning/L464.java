@@ -29,18 +29,20 @@ public class L464 {
         return dfs(0, maxChoosableInteger, desiredTotal, mem);
     }
 
+    // state is indicating which one is picked instead of using boolean array
     private boolean dfs(int state, int maxChoosableInteger, int desiredTotal, Map<Integer, Boolean> mem) {
         if (mem.get(state) != null) {
             return mem.get(state);
         }
+        // Fuck, the other player is already getting desiredTotal points, I am losing man
         if (desiredTotal <= 0) {
             mem.put(state, false);
             return false;
         }
 
-        for (int i = 0; i < maxChoosableInteger; i++) {
+        for (int i = 1; i <= maxChoosableInteger; i++) {
             if ((state & (1 << i)) == 0) {
-                boolean res = dfs(state | (1 << i), maxChoosableInteger, desiredTotal - i - 1, mem);
+                boolean res = dfs(state | (1 << i), maxChoosableInteger, desiredTotal - i, mem);
                 if (!res) {
                     mem.put(state, true);
                     return true;

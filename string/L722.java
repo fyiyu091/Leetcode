@@ -42,7 +42,7 @@ public class L722 {
 
             if (sb.length() > 0 && !blockComment) {
                 res.add(sb.toString());
-                sb = new StringBuilder();
+                sb.setLength(0);
             }
         }
 

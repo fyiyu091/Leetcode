@@ -13,6 +13,8 @@ public class L83 {
         ListNode slow = head;
         ListNode fast = head.next;
         while (fast != null) {
+            // slow keeps at the first occurrence of a number
+            // fast keeps moving to the right
             if (fast.val != slow.val) {
                 slow.next = fast;
                 slow = slow.next;

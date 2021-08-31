@@ -7,6 +7,7 @@ public class L236 {
         if (root == null) {
             return null;
         }
+        // If the root equals to any of the node
         for (NaryTree node : targetNode) {
             if (root == node) {
                 return root;

@@ -19,8 +19,10 @@ public class L25 {
         }
 
         ListNode next = curr.next;
+        // Cut off the chain
         curr.next = null;
         ListNode newHead = reverse(head);
+        // Reverse the next section with the k-group
         head.next = reverseKGroup(next, k);
         return newHead;
     }

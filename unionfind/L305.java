@@ -19,6 +19,8 @@ public class L305 {
         }
     }
 
+    // Union Find would connect all the vertex together
+    // This class doesn't keep track of any states
     class UnionFind {
         private V getRoot(V v) {
             V curr = v;

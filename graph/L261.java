@@ -16,6 +16,8 @@ public class L261 {
             int p = edge[0];
             int q = edge[1];
 
+            // Each time there was no merge, it was because we were adding an edge between two nodes that were already
+            // connected via a path. This means there is now an additional path between them -> definition of a cycle
             if (uf.find(p, q)) {
                 return false;
             }

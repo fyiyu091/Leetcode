@@ -8,9 +8,12 @@ package slidingwindow;
     X means the one that being picked
     Basically, trying to find the minimum ___ window
     XXX_____
+    012
     XX_____X
+     3-1  len - 1
     X_____XX
     _____XXX
+    X means the value that we pick
  */
 public class L1423 {
     public int maxScore(int[] cardPoints, int k) {

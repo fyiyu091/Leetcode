@@ -4,6 +4,9 @@ import java.util.Stack;
 
 /* calculator I
  *  +, -, (, ), no * or /
+ *  For ( no need to store it just to finish computing all the previous results ans start a new
+ *  Why we don't need to clean up all the results from the stack?
+ *  because it's already being done through sign )
 * */
 
 public class L224 {
@@ -35,6 +38,7 @@ public class L224 {
                 sign = -1;
             }
             // Store the sign and value onto stack, wait for pop to use
+            // Only push to stack at (
             else if (ch == '(') {
                 stack.push(res);
                 stack.push(sign);

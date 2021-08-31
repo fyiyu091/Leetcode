@@ -5,9 +5,7 @@ package stack;
   +, -, *, (, )
 */
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Stack;
+import java.util.*;
 
 public class L772 {
     public int calculate(String s) {
@@ -16,8 +14,8 @@ public class L772 {
         }
 
         s = '(' + s + ')';
-        Stack<Integer> numStack = new Stack<>();
-        Stack<Character> optStack = new Stack<>();
+        Deque<Integer> numStack = new ArrayDeque<>();
+        Deque<Character> optStack = new ArrayDeque<>();
         Map<Character, Integer> optPri = new HashMap<>();
         optPri.put('+', 0);
         optPri.put('-', 0);
@@ -56,7 +54,7 @@ public class L772 {
             }
             else if (ch >= '0' && ch <= '9') {
                 int val = 0;
-                while (i < s.length() && s.charAt(i) >= '0' && s.charAt(i) <= '9') {
+                while (i < s.length() && Character.isDigit(s.charAt(i))) {
                     char tmp = s.charAt(i++);
                     val = val * 10 + (tmp - '0');
                 }
@@ -69,8 +67,19 @@ public class L772 {
         return numStack.peek();
     }
 
-    // For the ), +, -, *, / case
-    private void addOpt(char ch, Stack<Integer> numStack, Stack<Character> optStack, Map<Character, Integer> optPri) {
+    /*
+        The very core of this algorithm
+        The most tricky part is that we have a operator priority case here
+        For example 3 * 5 - 6
+        6
+        5    -
+        3    *
+        is not right, instead when we trying to push -, we should calculate * first
+
+        6
+        15   -
+     */
+    private void addOpt(char ch, Deque<Integer> numStack, Deque<Character> optStack, Map<Character, Integer> optPri) {
         if (ch == ')') {
             while (true) {
                 char top = optStack.pop();
@@ -102,7 +111,7 @@ public class L772 {
         }
     }
 
-    private void cal(Stack<Integer> numStack, int num1, int num2, Character popOpt) {
+    private void cal(Deque<Integer> numStack, int num1, int num2, Character popOpt) {
         switch (popOpt) {
             case '+':
                 numStack.push(num2 + num1);

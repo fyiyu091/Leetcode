@@ -2,7 +2,13 @@ package slidingwindow;
 
 /* Gas station */
 /* If the gas sum is less than the cost sum, then we cannot do a circle */
-/* If during the iteration, the curr gas is smaller than the cost, need to start at i + 1 */
+/* If during the iteration, the curr gas is smaller than the cost, need to start at i + 1
+
+   i here is gas - cost
+   Saying we have i, i + 1, ... j all sum becomes negative the first time
+   Then it is not possible to have a k in range [i + 1, j] because from [i, k] must be positive
+   Otherwise it would be stopped
+ */
 
 public class L134 {
     public int canCompleteCircuit(int[] gas, int[] cost) {

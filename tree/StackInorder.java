@@ -1,8 +1,9 @@
 package tree;
 
-import java.util.LinkedList;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Deque;
 import java.util.List;
-import java.util.Stack;
 
 /*
     1. Value is being added to the res when poped out of the stack
@@ -11,25 +12,25 @@ import java.util.Stack;
  */
 public class StackInorder {
     public List<Integer> inorderTraversal(TreeNode root) {
-        List<Integer> res = new LinkedList<>();
+        List<Integer> res = new ArrayList<>();
+        Deque<TreeNode> stack = new ArrayDeque<>();
         if (root == null) {
             return res;
         }
 
-        Stack<TreeNode> stack = new Stack<>();
         TreeNode curr = root;
+        while (curr != null) {
+            stack.push(curr);
+            curr = curr.left;
+        }
 
-        while (curr != null || !stack.isEmpty()) {
-            // For adding all the left child
-            if (curr != null) {
-                stack.push(curr);
-                curr = curr.left;
-            }
-            // Exhausted the left children, time to pop, add and start with the right subtree
-            else {
-                curr = stack.pop();
-                res.add(curr.val);
-                curr = curr.right;
+        while (!stack.isEmpty()) {
+            TreeNode next = stack.pop();
+            res.add(next.val);
+            TreeNode nextSubtree = next.right;
+            while (nextSubtree != null) {
+                stack.push(nextSubtree);
+                nextSubtree = nextSubtree.left;
             }
         }
 

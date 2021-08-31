@@ -5,7 +5,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class    LISReturnOneSeq {
+/*
+    Get one sequence of the longest increasing subsequence
+
+ */
+public class LISReturnOneSeq {
     public List<Integer> longestIncreaseSequenceOneSeq(int[] nums) {
         List<Integer> buffer = new ArrayList<>();
         List<Integer> res = new ArrayList<>();
@@ -13,11 +17,12 @@ public class    LISReturnOneSeq {
             return res;
         }
 
-        // Path only stores from idx to idx
+        // Path only stores from number to number
         Map<Integer, Integer> path = new HashMap<>();
         for (int num : nums) {
             int idx = findIdx(buffer, num);
-            if (idx != 0 && buffer.size() != 0) {
+            // Basically to get the previous number
+            if (idx != 0) {
                 path.put(num, buffer.get(idx - 1));
             }
             if (idx == buffer.size()) {

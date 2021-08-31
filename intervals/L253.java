@@ -9,8 +9,9 @@ import java.util.List;
 
 /* Another way is to using a minHeap to store endtime, if the coming starttime is >= endtime, poll
    then add curr starttime into the minHeap, count the size of the minHeap at the end
+   with this approach, every moment the required number of rooms are true
  */
-public class L253 {
+public class  L253 {
     class Point implements Comparable<Point> {
         private int val;
         private boolean isLeft;

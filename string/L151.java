@@ -36,9 +36,13 @@ public class L151 {
         int i = 0;
         int j = 0;
         while (i < len) {
+            // Move the start pointer to the end pointer
             i = j;
+            // Find the starting pointer of a word
             while (i < len && arr[i] == ' ') i++;
+            // Move the end pointer to the starting pointer
             j = i;
+            // Find the end of the word
             while (j < len && arr[j] != ' ') j++;
             reverse(arr, i, j - 1);
         }
@@ -47,9 +51,13 @@ public class L151 {
         i = 0;
         j = 0;
         while (i < len) {
+            // Move i to the beginning of the word
             while (i < len && arr[i] == ' ') i++; // If don't i < len, then the next arr[i] could be index out of array exception
+            // Write the word
             while (i < len && arr[i] != ' ') arr[j++] = arr[i++];
+            // Skip all the space after the word
             while (i < len && arr[i] == ' ') i++;
+            // if we have word following means we would need to add space after pointer j
             if (i < len) arr[j++] = ' '; // If i reaches a valid number or character
         }
 

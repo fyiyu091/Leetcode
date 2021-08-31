@@ -7,7 +7,7 @@ public class L410 {
         }
 
         long left = 0;
-        long right = 0; // right will be the sum of all the elements
+        long right = 0; // right will be the sum of all the num
         for (int n : nums) {
             if (n > left) {
                 left = n;
@@ -36,7 +36,11 @@ public class L410 {
                 i++;
             }
             if (count <= m) {
-                res = Math.min(res, mid);
+                if (count == m) {
+                    res = Math.min(res, mid);
+                }
+                // Even if we found a possible answer, we shouldn't stop, we should keep search for even smaller
+                // possible answer
                 right = mid - 1;
             }
             else {
@@ -44,6 +48,7 @@ public class L410 {
             }
         }
 
-        return (int) left;
+        // How can we know that when left > right, we get the answer correctly?
+        return (int) res;
     }
 }

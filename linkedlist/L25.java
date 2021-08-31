@@ -16,10 +16,13 @@ public class L25 {
             curr = curr.next;
         }
         if (curr != null) {
+            // The next two lines are to break the tie
             ListNode nextHead = curr.next;
             curr.next = null;
+            // Reverse the k so far
             ListNode newHead = reverse(head);
             ListNode retHead = reverseKGroup(nextHead, k);
+            // At this moment, the head becomes the tail and just connect to the retHead
             head.next = retHead;
             return newHead;
         }

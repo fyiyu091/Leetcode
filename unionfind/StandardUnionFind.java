@@ -1,5 +1,10 @@
 package unionfind;
 
+/*
+    Two condition
+    1. Need path compression
+    2. Make sure the tree is smaller to larger
+ */
 public class StandardUnionFind {
     class Vertex {
         int val;

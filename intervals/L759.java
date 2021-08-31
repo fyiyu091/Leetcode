@@ -22,35 +22,26 @@ public class L759 {
 
     public List<Interval> employeeFreeTime(List<List<Interval>> schedule) {
         List<Interval> res = new ArrayList<>();
-        if (schedule == null || schedule.size() == 0) {
-            return res;
-        }
-
-        Queue<List<Interval>> minHeap = new PriorityQueue<>((a, b) -> a.get(0).start - b.get(0).start);
-        for (List<Interval> list : schedule) {
-            minHeap.offer(list);
+        Queue<Interval> queue = new PriorityQueue<>((a, b) -> a.start - b.start);
+        for (List<Interval> oneSchedule : schedule) {
+            for (Interval time : oneSchedule) {
+                queue.offer(time);
+            }
         }
 
         List<Interval> list = new ArrayList<>();
-        while (!minHeap.isEmpty()) {
-            List<Interval> curr = minHeap.poll();
-            list.add(curr.get(0));
-            curr.remove(curr.get(0));
-            if (curr.size() > 0) {
-                minHeap.offer(curr);
-            }
+        while (!queue.isEmpty()) {
+            list.add(queue.poll());
         }
 
-        // Now the list is sorted
         int prevEnd = list.get(0).end;
+
         for (int i = 1; i < list.size(); i++) {
             if (list.get(i).start > prevEnd) {
-                res.add(new Interval(prevEnd, list.get(i).start));
-                prevEnd = list.get(i).end;
+                Interval gap = new Interval(prevEnd, list.get(i).start);
+                res.add(gap);
             }
-            else {
-                prevEnd = Math.max(prevEnd, list.get(i).end);
-            }
+            prevEnd = Math.max(prevEnd, list.get(i).end);
         }
 
         return res;
